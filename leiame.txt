@@ -1,0 +1,10 @@
+1_1 - Total pvs 1
+1_2 - Total pvs 2
+25  - webbrowser name -  OK
+46 - pvs visits & browsers 
+53_1 - total browsers 1
+53_1 - total browsers 2
+63- browser per country - OK
+113 - most used search engine - OK
+10025- Channel per pvs & visits -  nrofrows=8
+10027 - Total Browsers per day

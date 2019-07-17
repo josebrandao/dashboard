@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <!-- This throws a validation error, however it is part of the standard Bootstrap Deployment -->
+            <meta name="viewport" content="width=device=width, initial-scale=1.0">
+            <title>Dashboard</title>
+            <link rel="stylesheet" href="css/bootstrap.css">
+            <link rel="stylesheet" href="css/styles.css">
+            <!-- All custom css for the dashboard goes in css/styles.css -->
+            <link rel="icon" href="img/favicon.png" type="image/png">
+            <!-- the above variable is updated by the python script, it is used to pull the correct data for yesterday from multiday report items -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <!-- Using  google CDN version for simplicity & performance, however, a local version can be used instead-->
+            <script src="js/highcharts.js"></script>
+            <script src="js/library.js"></script>
+            <!-- library.js contains the classes for manipulating dates, colors, and data retrieval from json-->
+            <script src="js/com_scripts.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header" class="row">
+                <div id="title" class="col-md-4 col-md-offset-8">
+                    <img src="img/cS_logo_color.png" alt="" class="logo">
+                </div>
+            </div>
+            <div class="row">
+                <!--  Text Blocks -->
+                <div class="col-md-4"><!-- Left Rail -->
+                    <div class="row">
+                        <div class="box_number col-xs-6 base_color">
+                            <span class="number pull-right">
+                                <span id="visitor_text_box" ></span>
+                                <span class="labelval pull-right">Total browsers</span>
+                            </span>
+                        </div>
+                        <div class="box_number col-xs-6 pos_color">
+                            <span class="number pull-right">
+                                <span id="visitor_change_text"></span>
+                                <span class="labelval pull-right">% change</span>
+                            </span>
+                        </div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="box_number col-xs-6 ">
+                            <span class="number pull-right">
+                                <span id="pageviews_box"></span>
+                                <span class="labelval pull-right">page views</span>
+                            </span>
+                        </div>
+                        <div class="box_number col-xs-6">
+                            <span class="number pull-right">
+                                <span id="pageviews_change_box"></span>
+                                <span class="labelval pull-right">% change</span>
+                            </span>
+                        </div>
+                    </div><!-- .row -->
+                    <!-- Browser Share Donuts -->
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div id="top_browser_donut_1" class="tiny_donut"></div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="top_browser_donut_2" class="tiny_donut"></div>
+                        </div>
+                    </div> <!-- .row -->
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div id="top_browser_donut_3" class="tiny_donut"></div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="top_browser_donut_4" class="tiny_donut"></div>
+                        </div>
+                    </div> <!-- .row -->
+                </div> <!-- .col-md-4  / Left Rail-->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div id="visits_splinearea" class="col-md-12"></div>
+                    </div>
+                </div><!-- .col-md-8 -->
+            </div> <!-- .row -->
+
+            <!-- New 12 Column Grid -->
+            <div class="row fullbreak">
+                <div id="referrer_table" class="col-md-6 table-responsive"><!-- table-responsive adds horizontal scroller -->
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6" id="search_bar"></div>
+                <div class="col-md-6" id="hour_column"></div>
+            </div>
+        </div> <!--.container-->
+    </body>
+</html>
